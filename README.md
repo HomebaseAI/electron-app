@@ -6,6 +6,7 @@ This app is a meant as a standalone app for admins. It is simply a webview throw
 To run this: ```npm install && npm start``` 
 
 To package for Mac: ```npm run package-mac```  
-To package for Windows: ```npm run package-win```
+To package for Windows: ```npm run package-win```  
 To package for Linux: ```npm run package-linux```
+
 

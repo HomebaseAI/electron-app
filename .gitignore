@@ -1,3 +1,6 @@
 .DS_STORE
 release_builds/
 node_modules/
+build/
+dist/
+release-builds/
