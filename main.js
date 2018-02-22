@@ -12,12 +12,12 @@ const url = require('url')
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 1440, 
-    height: 900, 
-    minHeight: 600, 
+    width: 1440,
+    height: 900,
+    minHeight: 600,
     minWidth: 1200,
     icon: path.join(__dirname, 'assets/icons/png/64x64.png'),
     show: false
@@ -47,7 +47,7 @@ function createWindow () {
 
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
-})
+  })
 }
 
 
@@ -55,7 +55,9 @@ function createWindow () {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+app.on('ready', function () {
+  createWindow()
+});
 
 
 // Quit when all windows are closed.
