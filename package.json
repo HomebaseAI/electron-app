@@ -5,15 +5,10 @@
   "description": "A standalone admin add for Homebase.",
   "main": "main.js",
   "scripts": {
-    "postinstall": "install-app-deps",
     "start": "electron .",
-    "pack": "build --dir",
-    "dist": "build",
-    "publish": "build --mac -p always",
-    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/HBdesktop.png.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . homebase --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/HBdesktop.png.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Homebase\"",
-    "package-linux": "electron-packager . homebase --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds",
-    "create-installer-mac": "electron-installer-dmg ./release-builds/Electron\\ homebase\\ app-darwin-x64/Electron\\ tutorial\\ app.app homebase --out=release-builds --overwrite --icon=assets/icons/mac/HBdesktop.png.icns"
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --mac",
+    "publish": "electron-builder --mac -p always"
   },
   "build": {
     "publish": [
@@ -61,8 +56,7 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^1.7.12",
-    "electron-builder": "^20.0.6",
-    "electron-packager": "^11.0.1"
+    "electron-builder": "^20.0.8"
   },
   "dependencies": {
     "electron-updater": "^2.20.1"
