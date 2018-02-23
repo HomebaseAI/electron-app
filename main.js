@@ -1,4 +1,5 @@
 const electron = require('electron')
+const {autoUpdater} = require("electron-updater");
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
@@ -57,8 +58,17 @@ function createWindow() {
 // Some APIs can only be used after this event occurs.
 app.on('ready', function () {
   createWindow()
+  autoUpdater.checkForUpdates();
 });
 
+// when the update has been downloaded and is ready to be installed, notify the BrowserWindow
+autoUpdater.on('update-downloaded', (info) => {
+  win.webContents.send('updateReady')
+});
+
+electron.ipcMain.on("quitAndInstall", (event, arg) => {
+  autoUpdater.quitAndInstall();
+})
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
