@@ -1,5 +1,6 @@
 const electron = require('electron')
 const {autoUpdater} = require("electron-updater");
+const log = require('electron-log');
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
@@ -12,6 +13,11 @@ const url = require('url')
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
+
+function sendStatusToWindow(text) {
+  log.info(text);
+  win.webContents.send('message', text);
+}
 
 function createWindow() {
   // Create the browser window.
@@ -61,9 +67,26 @@ app.on('ready', function () {
   autoUpdater.checkForUpdates();
 });
 
-// when the update has been downloaded and is ready to be installed, notify the BrowserWindow
+autoUpdater.on('checking-for-update', () => {
+  sendStatusToWindow('Checking for update...');
+})
+autoUpdater.on('update-available', (info) => {
+  sendStatusToWindow('Update available.');
+})
+autoUpdater.on('update-not-available', (info) => {
+  sendStatusToWindow('Update not available.');
+})
+autoUpdater.on('error', (err) => {
+  sendStatusToWindow('Error in auto-updater. ' + err);
+})
+autoUpdater.on('download-progress', (progressObj) => {
+  let log_message = "Download speed: " + progressObj.bytesPerSecond;
+  log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
+  log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
+  sendStatusToWindow(log_message);
+})
 autoUpdater.on('update-downloaded', (info) => {
-  win.webContents.send('updateReady')
+  sendStatusToWindow('Update downloaded');
 });
 
 electron.ipcMain.on("quitAndInstall", (event, arg) => {
