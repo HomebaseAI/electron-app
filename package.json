@@ -23,6 +23,7 @@
       }
     ],
     "dmg": {
+      "icon": "build/icon.icns",
       "contents": [
         {
           "x": 110,
