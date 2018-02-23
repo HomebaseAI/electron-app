@@ -1,7 +1,7 @@
 {
   "name": "Homebase",
   "productName": "Homebase",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A standalone admin add for Homebase.",
   "main": "main.js",
   "repository": {
