@@ -19,7 +19,7 @@ log.info('App starting...');
 
 function sendStatusToWindow(text) {
   log.info(text);
-  win.webContents.send('message', text);
+  mainWindow.webContents.send('message', text);
 }
 
 function createWindow() {
