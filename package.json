@@ -4,6 +4,10 @@
   "version": "0.0.2",
   "description": "A standalone admin add for Homebase.",
   "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HomebaseAI/electron-app.git"
+  },
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
@@ -14,10 +18,9 @@
     "publish": [
       {
         "provider": "github",
-        "host": "github.com",
-        "private": true,
         "owner": "HomebaseAI",
-        "repo": "electron-app"
+        "repo": "electron-app",
+        "token": ""
       }
     ],
     "dmg": {
