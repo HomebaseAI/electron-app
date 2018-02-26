@@ -15,17 +15,18 @@
     "publish": "electron-builder --mac -p always"
   },
   "build": {
-    "publish": [
-      {
-        "provider": "github",
-        "owner": "HomebaseAI",
-        "repo": "electron-app"
-      }
-    ],
+    "publish": [{
+      "provider": "github",
+      "owner": "HomebaseAI",
+      "repo": "electron-app"
+    }],
+    "mac": {
+      "target": "mas",
+      "icon": "build/icon.icns"
+    },
     "dmg": {
       "icon": "build/icon.icns",
-      "contents": [
-        {
+      "contents": [{
           "x": 110,
           "y": 150
         },
