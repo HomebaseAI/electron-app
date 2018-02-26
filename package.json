@@ -15,6 +15,7 @@
     "publish": "electron-builder --mac -p always"
   },
   "build": {
+    "appId": "ai.homebase.mac.electron",
     "publish": [{
       "provider": "github",
       "owner": "HomebaseAI",
