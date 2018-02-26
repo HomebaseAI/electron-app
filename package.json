@@ -11,23 +11,26 @@
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder --mac",
+    "dist": "electron-builder --win",
     "publish": "electron-builder --mac -p always"
   },
   "build": {
     "appId": "ai.homebase.mac.electron",
-    "publish": [{
-      "provider": "github",
-      "owner": "HomebaseAI",
-      "repo": "electron-app"
-    }],
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "HomebaseAI",
+        "repo": "electron-app"
+      }
+    ],
     "mac": {
-      "target": "mas",
+      "target": ["dmg", "mas"],
       "icon": "build/icon.icns"
     },
     "dmg": {
       "icon": "build/icon.icns",
-      "contents": [{
+      "contents": [
+        {
           "x": 110,
           "y": 150
         },
@@ -46,8 +49,13 @@
       ]
     },
     "win": {
-      "target": "NSIS",
+      "target": ["appx", "NSIS"],
       "icon": "build/icon.ico"
+    },
+    "appx": {
+      "applicationId": "ai.homebase.win.electron",
+      "displayName": "Homebase Developer Tools",
+      "publisherDisplayName": "Homebase AI"
     }
   },
   "keywords": [
