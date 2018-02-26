@@ -65,8 +65,8 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Homebase AI",
+  "license": "MIT",
   "devDependencies": {
     "electron": "^1.7.12",
     "electron-builder": "^20.0.8"
