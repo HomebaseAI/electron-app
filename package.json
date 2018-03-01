@@ -26,7 +26,10 @@
       }
     ],
     "mac": {
-      "target": ["dmg", "mas"],
+      "target": [
+        "dmg",
+        "mas"
+      ],
       "icon": "assets/icons/mac/icon.icns"
     },
     "dmg": {
@@ -45,7 +48,10 @@
       ]
     },
     "win": {
-      "target": ["appx", "NSIS"],
+      "target": [
+        "appx",
+        "NSIS"
+      ],
       "icon": "assets/icons/win/icon.ico"
     },
     "appx": {
@@ -76,7 +82,8 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^1.7.12",
-    "electron-builder": "^20.0.8"
+    "electron-builder": "^20.0.8",
+    "electron-is-dev": "^0.3.0"
   },
   "dependencies": {
     "electron-log": "^2.2.14",

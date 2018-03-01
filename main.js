@@ -1,6 +1,9 @@
 const electron = require('electron')
-const {autoUpdater} = require("electron-updater");
+const {
+  autoUpdater
+} = require("electron-updater");
 const log = require('electron-log');
+const isDev = require('electron-is-dev');
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
@@ -35,6 +38,12 @@ function createWindow() {
 
   mainWindow.setMenu(null)
 
+  if (isDev) {
+    mainWindow.webContents.executeJavaScript("var html = document.getElementById('wv1'); html.setAttribute('src', 'https://admindev.homebase.ai')")
+  } else {
+    mainWindow.webContents.executeJavaScript("var html = document.getElementById('wv1'); html.setAttribute('src', 'https://admin.homebase.ai')")
+  }
+
   electron.powerMonitor.on('resume', () => {
     mainWindow.webContents.reload()
   })
@@ -46,8 +55,6 @@ function createWindow() {
     slashes: true
   }))
 
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
@@ -69,7 +76,7 @@ app.on('ready', function () {
   createWindow()
 });
 
-app.on('ready', function()  {
+app.on('ready', function () {
   autoUpdater.checkForUpdatesAndNotify();
 });
 
