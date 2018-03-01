@@ -33,6 +33,8 @@ function createWindow() {
     show: false
   })
 
+  mainWindow.setMenu(null)
+
   electron.powerMonitor.on('resume', () => {
     mainWindow.webContents.reload()
   })
