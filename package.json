@@ -2,7 +2,7 @@
   "name": "homebase-admin-app",
   "productName": "Homebase Admin App",
   "version": "0.1.0",
-  "description": "Homebase is an intelligent apartment management platform, incubated out of the Think Big Partners Incubator, that simplifies the management of critical functions in the tenant / landlord relationship, while unlocking the power of the Internet of Things and building automation.\n\nWith Homebase, communication is conversational, immediate and seamless, like text messaging. Collecting payments is automatic and paying rent is as simple as tapping a notification. Managing maintenance is stress-free, accountable and provides a comprehensive building perspective at a glance to the property manager. All of these functions are tightly integrated with commercially available smart devices and building automation systems to give residents and property managers full control of their units locks, thermostats, lights and other connected devices and use them to complete everyday tasks.",
+  "description": "Homebase is an intelligent apartment management platform, incubated out of the Think Big Partners Incubator, that simplifies the management of critical functions in the tenant / landlord relationship, while unlocking the power of the Internet of Things and building automation. With Homebase, communication is conversational, immediate and seamless, like text messaging. Collecting payments is automatic and paying rent is as simple as tapping a notification. Managing maintenance is stress-free, accountable and provides a comprehensive building perspective at a glance to the property manager. All of these functions are tightly integrated with commercially available smart devices and building automation systems to give residents and property managers full control of their units locks, thermostats, lights and other connected devices and use them to complete everyday tasks.",
   "main": "main.js",
   "repository": {
     "type": "git",
@@ -57,7 +57,7 @@
     "appx": {
       "applicationId": "ai.homebase.win.electron",
       "displayName": "Homebase Admin",
-      "publisherDisplayName": "Homebase AI"
+      "publisherDisplayName": "Homebase"
     }
   },
   "keywords": [
