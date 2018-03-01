@@ -1,0 +1,92 @@
+{
+  "name": "homebase-admins",
+  "productName": "Homebase Admin",
+  "version": "0.1.0",
+  "description": "Homebase is an intelligent apartment management platform, incubated out of the Think Big Partners Incubator, that simplifies the management of critical functions in the tenant / landlord relationship, while unlocking the power of the Internet of Things and building automation.With Homebase, communication is conversational, immediate and seamless, like text messaging. Collecting payments is automatic and paying rent is as simple as tapping a notification. Managing maintenance is stress-free, accountable and provides a comprehensive building perspective at a glance to the property manager. All of these functions are tightly integrated with commercially available smart devices and building automation systems to give residents and property managers full control of their units locks, thermostats, lights and other connected devices and use them to complete everyday tasks.",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HomebaseAI/electron-app.git"
+  },
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist-mac": "electron-builder --mac",
+    "dist-win": "electron-builder --win",
+    "publish-mac": "electron-builder --mac -p always",
+    "publish-win": "electron-builder --win -p always"
+  },
+  "build": {
+    "appId": "ai.homebase.mac.electron",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "HomebaseAI",
+        "repo": "electron-app"
+      }
+    ],
+    "mac": {
+      "target": [
+        "dmg",
+        "mas"
+      ],
+      "icon": "assets/icons/mac/icon.icns"
+    },
+    "dmg": {
+      "icon": "assets/icons/mac/icon.icns",
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        "appx",
+        "NSIS"
+      ],
+      "icon": "assets/icons/win/icon.ico"
+    },
+    "appx": {
+      "applicationId": "ai.homebase.win.electron",
+      "displayName": "Homebase Admin",
+      "publisherDisplayName": "Homebase"
+    }
+  },
+  "keywords": [
+    "Homebase",
+    "Smart",
+    "Apartment",
+    "Connected",
+    "Apartment",
+    "Apartments",
+    "Smart",
+    "Home",
+    "Smart",
+    "Apartment",
+    "iot",
+    "internet",
+    "things",
+    "rent",
+    "maintenance",
+    "payments"
+  ],
+  "author": "Homebase AI",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^1.7.12",
+    "electron-builder": "^20.0.8",
+    "electron-is-dev": "^0.3.0"
+  },
+  "dependencies": {
+    "electron-log": "^2.2.14",
+    "electron-updater": "^2.20.1"
+  }
+}

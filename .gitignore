@@ -1,0 +1,7 @@
+.DS_STORE
+release_builds/
+node_modules/
+dist/
+release-builds/
+*.tgz
+embedded.provisionprofile
