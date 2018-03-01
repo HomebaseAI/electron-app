@@ -11,8 +11,10 @@
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder --win",
-    "publish": "electron-builder --mac -p always"
+    "dist-mac": "electron-builder --mac",
+    "dist-win": "electron-builder --win",
+    "publish-mac": "electron-builder --mac -p always",
+    "publish-win": "electron-builder --win -p always"
   },
   "build": {
     "appId": "ai.homebase.mac.electron",
@@ -54,7 +56,7 @@
     },
     "appx": {
       "applicationId": "ai.homebase.win.electron",
-      "displayName": "Homebase Developer Tools",
+      "displayName": "Homebase Admin",
       "publisherDisplayName": "Homebase AI"
     }
   },
